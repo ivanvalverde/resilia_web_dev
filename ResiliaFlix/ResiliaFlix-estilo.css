@@ -41,7 +41,23 @@ h1{
 }
 
 main{
-    height: 550px;
+    background: #F7DCD6;
+    display: flex;
+    justify-content: center;
+}
+
+.filmes{
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    padding: 1%;
+    justify-content: flex-start;
+    
+}
+
+.filmes_unidade{
+    width: 20%;
+    margin: 2% 2%;
 }
 
 footer{
