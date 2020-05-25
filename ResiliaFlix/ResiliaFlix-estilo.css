@@ -1,10 +1,19 @@
 
+html{
+    height: 100%;
+}
 
 header{
     background: #363636;
     color: #363636;
     padding-top: 5px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 h1{
@@ -15,7 +24,7 @@ h1{
 }
 
 .container{
-    height: 30px;
+    height: auto;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -32,8 +41,6 @@ h1{
     font-size: 18px;
     margin-left: 5%;
     margin-right: 5%;
-    padding-left: 7%;
-    padding-right: 7%;
     border: 1px solid #FFFF00;
     background: #FFFF00;
     border-radius: 5px;
@@ -44,6 +51,7 @@ main{
     background: #F7DCD6;
     display: flex;
     justify-content: center;
+    min-height: 600px;
 }
 
 .filmes{
@@ -62,17 +70,17 @@ main{
 
 footer{
     background: #363636;
+    margin-top: auto;
 }
 
 .container-footer{
     display: flex;
-    width: 60%;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 .container-footer img{
-    width: 4%;
-    height: 4%;
+    width: 2%;
+    height: 2%;
     margin-right: 2%;
     margin-left: 2%;
     padding-top: 1%;
@@ -83,6 +91,57 @@ footer p{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
     text-align: center;
-    margin-top: 0.5%;
+    margin-top: 1%;
     padding-bottom: 0.5%;
+}
+
+/* parte mobile */
+
+@media(max-width: 768px){
+    header .container{
+        flex-direction: column;
+        align-items: initial;
+        text-align: center;
+    }
+
+    .menu-inicial{
+        margin: 2%;
+        border: none;
+        color: #FFFF00;
+        background: #363636;
+        text-decoration: underline;
+    }
+
+    .container2{
+        flex-direction: column;
+        width: auto;
+    }
+
+    .filmes{
+        flex-wrap: nowrap;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .filmes_unidade{
+        width: 50%;
+    }
+
+    .container-footer{
+        width: auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-footer img{
+        width: 25px;
+        height: 25px;
+    }
+
+    footer p{
+        margin-top:2%
+    }
+
 }
