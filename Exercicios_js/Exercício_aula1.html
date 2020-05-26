@@ -1,0 +1,41 @@
+<meta charset="UTF-8">
+
+
+
+<button type="button" onclick="aVidente()">aVidente</button>
+
+<button type="button" onclick="leveiParaIlha()">Ilha Deserta</button>
+ 
+ 
+<script>
+    var nome = "Ivan";
+    var numeroDeFilhosDesejados = 4;
+    var cidadeFutura = "Toronto";
+    var profissaoDesejada = "desenvolvidor web";
+    var item1 = "helicóptero";
+    var item2 = "combustível de helicóptero";
+    var item3 = "manual de como pilotar um helicóptero";
+    var animalAlmejado = "Lhama, pois ela pode cuspir nos outros sem dar satisfação";
+
+
+
+    function aVidente(){
+        document.write("A vidente prevê: "+ nome + " terá "+ numeroDeFilhosDesejados +" filhos  e viverá em "+ cidadeFutura + " trabalhando como "+ profissaoDesejada);
+    }
+
+    function leveiParaIlha(){
+        document.write("Eu levaria para uma ilha deserta: "+item1+", "+item2+", "+item3);
+    }
+
+    function escolhaAnimal(){
+        document.write("<br><br><br>No primeiro momento, eu gostaria de ser um: "+ animalAlmejado);
+        document.write("<br>");
+        animalAlmejado = "Macaco, pois ele joga fezes nos outros";
+        document.write("Pensando melhor, prefiro ser um(a): "+ animalAlmejado);
+        
+    }
+
+    escolhaAnimal();
+    
+
+</script>
