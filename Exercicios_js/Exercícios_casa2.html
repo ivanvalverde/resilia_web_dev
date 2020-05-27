@@ -1,0 +1,42 @@
+<meta charset="UTF-8">
+
+
+<script>
+    
+    function dividirEntreVizinhos(laranjas, vizinhos){
+        return Math.trunc(laranjas/vizinhos);
+    }
+
+    function restanteAposDivisao(laranjas, vizinhos){
+        return laranjas%vizinhos;
+    }
+
+    var qtdd_laranjas = prompt("Quantas laranjas serão divididas entre os vizinhos?");
+    var qtdd_vizinhos = prompt("Quantos vizinhos irão receber laranjas?");
+    document.write("Cada vizinho receberá "+ dividirEntreVizinhos(qtdd_laranjas, qtdd_vizinhos)+" laranjas.<br>");
+    document.write("Sobraram "+ restanteAposDivisao(qtdd_laranjas, qtdd_vizinhos)+" laranjas após a divisão.<br><br><br>")
+    
+</script>
+
+
+
+<script>
+
+    function calcularImposto(valor){
+        return (valor*89)/1000
+    }
+
+    function calcularLucroLiquido(custo, valor, imposto){
+        return valor-custo-imposto;
+    }
+
+    var nomePizzaResilia = prompt("Qual o tipo da pizza produzida?")
+    var custoPizzaResilia = prompt("Qual é o custo de produção da pizza de "+ nomePizzaResilia)
+    var valorPizzaResilia = prompt("Qual é o valor pelo qual a pizza de "+nomePizzaResilia+" é vendida?")
+    var impostoPizzaResilia = calcularImposto(valorPizzaResilia)
+    var lucroLiquido = calcularLucroLiquido(custoPizzaResilia, valorPizzaResilia, impostoPizzaResilia)
+
+    document.write("Para a pizza de "+ nomePizzaResilia +", o lucro líquido é de R$"+ lucroLiquido +", e o imposto é de R$"+impostoPizzaResilia+".")
+
+
+</script>
