@@ -1,0 +1,67 @@
+<meta charset="UTF-8">
+
+<!-- 
+    O objetivo dessas funções abaixo é calcular a inflação de cada um dos alimentos no período, a inflação média
+    no período (leva todos em conta) e a estimativa diária de inflação para cada um dos alimentos.
+    Utilize a tabela abaixo:
+
+    Alimento    Preço   Data
+    Tomate      3.30    24/04
+    Tomate      4.70    30/04
+    Arroz       2.99    24/04
+    Arroz       3.25    30/04
+    Cenoura     3.99    24/04
+    Cenoura     4.14    30/04
+-->
+
+<script>
+    
+function calculaInflacao(preco, precoDois){
+    var inflacao = (precoDois - preco)/preco;
+    return inflacao;
+}
+
+function calculaInflacaoMedia(inflacaoTomate, inflacaoArroz, inflacaoCenoura){
+    var inflacaoMedia = (inflacaoTomate + inflacaoArroz + inflacaoCenoura)/3;
+    return inflacaoMedia;
+}
+
+function calculaInflacaoDiaria(inflacaoPeriodo, periodo){
+
+    var inflacaoDiaria = inflacaoPeriodo/periodo;
+    return inflacaoDiaria;
+}
+
+/* Variável conjunta */
+var periodoTotal = 6;
+
+/* Variáveis relativa ao alimento: tomate */
+var precoTomateAntes = 3.30;
+var precoTomateDepois = 4.70;
+var inflacaoTomate = calculaInflacao(precoTomateAntes, precoTomateDepois).toFixed(3)*100;
+var inflacaoDiariaTomate = calculaInflacaoDiaria(inflacaoTomate, periodoTotal).toFixed(3);
+
+/* Variáveis relativa ao alimento: arroz */
+var precoArrozAntes = 2.99;
+var precoArrozDepois = 3.25;
+var inflacaoArroz = calculaInflacao(precoArrozAntes, precoArrozDepois).toFixed(3)*100;
+var inflacaoDiariaArroz = calculaInflacaoDiaria(inflacaoArroz, periodoTotal).toFixed(3);
+
+
+/* Variáveis relativa ao alimento: cenoura */
+var precoCenouraAntes = 3.99;
+var precoCenouraDepois = 4.14;
+var inflacaoCenoura = calculaInflacao(precoCenouraAntes, precoCenouraDepois).toFixed(3)*100;
+var inflacaoDiariaCenoura = calculaInflacaoDiaria(inflacaoCenoura, periodoTotal).toFixed(3);
+
+/* Variável conjunta */
+var inflacaoMedia =  calculaInflacaoMedia(inflacaoTomate, inflacaoArroz, inflacaoCenoura).toFixed(3);
+
+
+/* printando os resultados*/
+document.write("A inflação do tomate no período é "+ inflacaoTomate+"% e sua inflação diária é "+ inflacaoDiariaTomate+"%.<br><br>")
+document.write("A inflação do arroz no período é "+ inflacaoArroz+"% e sua inflação diária é "+ inflacaoDiariaArroz+"%.<br><br>")
+document.write("A inflação da cenoura no período é "+ inflacaoCenoura+"% e sua inflação diária é "+ inflacaoDiariaCenoura+"%.<br><br>")
+document.write("A inflação média é "+ inflacaoMedia+"%.")
+
+</script>

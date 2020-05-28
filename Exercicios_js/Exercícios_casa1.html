@@ -1,31 +1,38 @@
 <meta charset="UTF-8">
 
+<!--
+    Crie um programa com as seguintes funções: 
+    dobro: essa função recebe um número como parâmetro e retorna o dobro dele como resultado
+    metade: essa função recebe um número como parâmetro e rotorna a metade dele como resultado
+    saudacao: essa função recebe uma string "nome" como parâmetro e retorna o texto "olá {nome}! Tudo bem?" 
+-->
+
 <script>
 var numeroDobro
 var numeroMetade
 
-function dobro(num){
+function dobrar(num){
     var numeroDobrado;
     numeroDobrado = num*2;
     return numeroDobrado;
 }
 
-function metade(num){
+function dividirMetade(num){
     var metadeNumero;
     metadeNumero = num/2;
     return metadeNumero;
 }
 
-function saudacao(text){
-    document.write("olá "+ text + "! Tudo bem?")
+function cumprimentar(text){
+    document.write("Olá "+ text + "! Tudo bem?")
 }
 
-numeroDobro = dobro(15);
+numeroDobro = dobrar(15);
 document.write(numeroDobro)
 document.write("<br>")
-numeroMetade = metade(20);
+numeroMetade = dividirMetade(20);
 document.write(numeroMetade)
 document.write("<br>")
-saudacao("Ivan");
+cumprimentar("Ivan");
 
 </script>
