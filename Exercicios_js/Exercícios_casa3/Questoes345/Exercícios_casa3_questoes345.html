@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<head lang="pt-br">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="Exercícios3_casa_questoes345_style.css">
+</head>
+
+<!--
+    Resto 9: Crie uma função que recebe como parâmetro um número. Essa função deve retornar o texto 
+    "O resto de {numero} divididos por 9 é: {resto da divisão}". Escreva na tela o resultado desta função
+    com os parâmetros a sua escolha. 
+
+    O motorista: Crie uma função que recebe 2 parâmetros: a idade do usuário e a idade em que é permitido 
+    dirigir em algum país. Essa função deve retornar o texto "você pode dirigir" caso a idade do usuário seja
+    maior ou igual a estabelecida para direção no país e "você não pode dirigir" caso contrário.
+    Escreva na tela o resultado desta função com os parâmetros a sua escolha.Teste todas as saídas possíveis.
+    
+    Bebedeira: Crie uma função que recebe 2 parâmetros: a idade do usuário e a idade em que é permitido beber
+    em algum país. Essa função deve retornar o texto "você pode beber" caso a idade do usuário seja maior ou
+    igual a estabelecida para consumo de bebidas alcoólicas no país e "você não pode beber" caso contrário.
+    Escreva na tela o resultado desta função com os parâmetros a sua escolha. Teste todas as saídas possíveis. 
+
+
+-->
+
+<script>
+    function restoPorNove(){
+        var resto = document.getElementById("numeroParaDividir");
+        return resto.value%9;
+    }
+
+    function podeDirigir(){
+        var suaIdade = document.getElementById("idade");
+        var idadePermitidaDirigir = document.getElementById("idadeParaDirigir");
+        
+        if(suaIdade.value >= idadePermitidaDirigir.value){
+            return "Você já está habilitado para dirigir!";
+        } else{
+            return "Infelizmente você terá que esperar alguns anos para dirigir jovem...";
+        }
+    }
+
+    function podeBeber(){
+        var suaIdade = document.getElementById("idade2");
+        var idadePermitidaBeber = document.getElementById("idadeParaBeber");
+        
+        if(suaIdade.value >= idadePermitidaBeber.value){
+            return "Você já pode começar a encher a cara!";
+        } else{
+            return "Infelizmente você terá que esperar alguns anos para ingerir álcool jovem...";
+        }
+    }
+
+
+</script>
+
+
+<br><br>
+
+<form onsubmit="restoPorNove()">
+    <label>Escreva um número para dividir por 9:</label>
+    <br>
+    <input type="number" id="numeroParaDividir" placeholder="Ex: 120">
+</form>
+<br>
+
+<p id="resultado"></p>
+<br>
+<button onclick="document.getElementById('resultado').innerHTML = restoPorNove()">Resto da divisão por 9</button>
+
+
+
+<form onsubmit="podeDirigir()">
+    <br><br><br>
+    <label>Escreva a sua idade:</label>
+    <br>
+    <input type="number" id="idade" placeholder="Ex: 18">
+    <br><br>
+    <label>Idade que é permitido dirigir no seu país:</label>
+    <br>
+    <input type="number" id="idadeParaDirigir" placeholder="Ex: 21">
+</form>
+<br>
+
+<p id="resposta"></p>
+<br>
+<button onclick="document.getElementById('resposta').innerHTML = podeDirigir()">Comparômetro</button>
+
+
+
+<form onsubmit="podeBeber()">
+    <br><br><br>
+    <label>Escreva a sua idade:</label>
+    <br>
+    <input type="number" id="idade2" placeholder="Ex: 18">
+    <br><br>
+    <label>Idade que é permitido beber na sua região:</label>
+    <br>
+    <input type="number" id="idadeParaBeber" placeholder="Ex: 21">
+</form>
+<br>
+
+<p id="permissao"></p>
+<br>
+<button onclick="document.getElementById('permissao').innerHTML = podeBeber()">Comparômetro 2</button>

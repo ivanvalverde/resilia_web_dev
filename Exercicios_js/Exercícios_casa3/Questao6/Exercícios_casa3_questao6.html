@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<head lang="pt-br">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="Exercícios3_casa_questao6_style.css">
+</head>
+
+<!--
+    Semáforo: faça uma função que recebe como parâmetro as strings "verde", "amarelo" ou "vermelho".
+    Caso o parâmetro passado seja "verde", a função deve retornar "pode passar!", caso seja "amarelo",
+    retorna "melhor freiar", caso seja "vermelhor", "pare já!". Utilize document.write para escrever na tela
+    o resultado desta função com os parâmetros a sua escolha. Teste todas as saídas possíveis.
+
+-->
+
+<script>
+    function respostaSemaforo(){
+        var cor = document.getElementById("corDoSinal");
+        var fotosinal = document.getElementById("semaforo");
+        if(cor.value == "verde"){
+            fotosinal.src = "semaforo-verde.png";
+            fotosinal.width = "209";
+            fotosinal.height = "242";
+            document.getElementById("msgAoMotorista").style.color = "green";
+            return "Pode seguir em frente!";
+        } else if(cor.value == "Verde"){
+            fotosinal.src = "semaforo-verde.png";
+            fotosinal.width = "209";
+            fotosinal.height = "242";
+            document.getElementById("msgAoMotorista").style.color = "green";
+            return "Pode seguir em frente!";
+        } else if(cor.value == "VERDE"){
+            fotosinal.src = "semaforo-verde.png";
+            fotosinal.width = "209";
+            fotosinal.height = "242";
+            document.getElementById("msgAoMotorista").style.color = "green";
+            return "Pode seguir em frente!"
+        } else if(cor.value == "amarelo"){
+            fotosinal.src = "semaforo-amarelo.png";
+            fotosinal.width = "209";
+            fotosinal.height = "242";
+            document.getElementById("msgAoMotorista").style.color = "#FFD400";
+            return "Atenção motorista! Reduza a velocidade!";
+        } else if(cor.value == "Amarelo"){
+            fotosinal.src = "semaforo-amarelo.png";
+            fotosinal.width = "209";
+            fotosinal.height = "242";
+            document.getElementById("msgAoMotorista").style.color = "#FFD400";
+            return "Atenção motorista! Reduza a velocidade!";
+        } else if(cor.value == "AMARELO"){
+            fotosinal.src = "semaforo-amarelo.png";
+            fotosinal.width = "209";
+            fotosinal.height = "242";
+            document.getElementById("msgAoMotorista").style.color = "#FFD400";
+            return "Atenção motorista! Reduza a velocidade!";
+        } else if(cor.value == "vermelho"){
+            fotosinal.src = "semaforo-vermelho.png";
+            fotosinal.width = "209";
+            fotosinal.height = "242";
+            document.getElementById("msgAoMotorista").style.color = "red";
+            return "Pare! Você não quer causar um acidente!";
+        } else if(cor.value == "Vermelho"){
+            fotosinal.src = "semaforo-vermelho.png";
+            fotosinal.width = "209";
+            fotosinal.height = "242";
+            document.getElementById("msgAoMotorista").style.color = "red";
+            return "Pare! Você não quer causar um acidente!";
+        } else if(cor.value == "VERMELHO"){
+            fotosinal.src = "semaforo-vermelho.png";
+            fotosinal.width = "209";
+            fotosinal.height = "242";
+            document.getElementById("msgAoMotorista").style.color = "red";
+            return "Pare! Você não quer causar um acidente!";
+        } else{
+            fotosinal.src = "semaforo-vermelho.png"
+            fotosinal.width = "0";
+            fotosinal.height = "0";
+            document.getElementById("msgAoMotorista").style.color = "black";
+            return "Preencha uma cor válida espertinho(a)!";
+        }
+    }
+
+
+</script>
+
+
+<form onsubmit="respostaSemaforo()">
+    <label>Você está dirigindo e se depara com o semáforo. Qual a cor do sinal?</label>
+    <br><br>
+    <input type="text" id="corDoSinal" placeholder="Ex: Verde">
+</form>
+<br>
+<br>
+<button onclick="document.getElementById('msgAoMotorista').innerHTML = respostaSemaforo()">Descubra se pode passar</button>
+
+<p id="msgAoMotorista"></p>
+<br>
+<img id="semaforo">

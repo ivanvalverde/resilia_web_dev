@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="Exercícios3_casa_questoes12_style.css">
+</head>
+
+<!--Concatena strings: Crie uma função que recebe como parâmetro duas strings. Essa função deve retornar 
+as duas strings concatenadas ("juntadas") separadas por um espaço. Escreva na tela o resultado desta função
+ com os parâmetros de teste "Olá" e "Mundo!" 
+
+Cumprimenta: Crie uma função que recebe como parâmetro o nome de uma pessoa. Essa função deve
+retornar o texto em duas linhas distintas: "Olá {nome}." "Tudo bem {nome}?". Escreva na tela o resultado 
+desta função com os parâmetros a sua escolha. 
+-->
+
+<body>
+
+<script>
+
+     function concatenaStrings(){
+        var stringPassada = document.getElementById("texto1");
+        var stringPassada2 =  document.getElementById("texto2");
+        return stringPassada.value+ " " + stringPassada2.value;
+    }
+
+    function cumprimenta(){
+        var nome = document.getElementById("texto3");
+        return "Olá "+nome.value+". Tudo bem "+nome.value+"?";
+    }
+    
+</script>
+
+<form onsubmit="concatenaStrings()" class="formulario">
+    <br>
+    <input type="text" id="texto1" placeholder="Olá ">
+    <input type="text" id="texto2" placeholder="mundo">
+
+</form>
+
+<p id="saidaTexto"></p>
+<button onclick="document.getElementById('saidaTexto').innerHTML = concatenaStrings()">Concatenar textos</button>
+<br><br><br>
+
+
+<form onsubmit="cumprimenta()" class="formulario">
+    <br>
+    <input type="text" id="texto3" placeholder="Seu nome">
+
+</form>
+<p id="saidaTexto2"></p>
+<button onclick="document.getElementById('saidaTexto2').innerHTML = cumprimenta()">Cumprimentar</button>
+
+
+</body>

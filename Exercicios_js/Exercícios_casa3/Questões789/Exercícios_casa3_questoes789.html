@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<head lang="pt-br">
+<meta charset="UTF-8">
+<link rel="stylesheet" href="Exercícios3_casa_questoes789_style.css">
+</head>
+
+
+
+<!--Utilize o campo de script abaixo para resolver os problemas propostos!-->
+<body>
+    <script>
+
+        function ExibeMenu(item1, item2, item3){
+            var cardapio = document.getElementById('opcoes').innerHTML = "As opções de bebidas do restaurante resilia são:<br><br>1- R$5,80 "+item1+"<br><br>2- R$6,50 "+item2+"<br><br>3- R$3,00 "+item3;
+            return cardapio;
+        }
+
+        function ExibeEscolha(){
+            var escolhaCliente = document.forms["possibilidades"]["bebida"].value;
+            if(escolhaCliente == 1){
+                escolhaCliente = "Boa Escolha! Um refrigerante geladinho nesse calor, refresca bastante!";
+            } else if(escolhaCliente == 2){
+                escolhaCliente = "Bela opção! Aqui vai um suco cheio de nutrientes para animar o dia!";
+            } else if(escolhaCliente == 3){
+                escolhaCliente = "Só a água tira a sede de verdade!";
+            } else if(escolhaCliente == "Refrigerante"){
+                escolhaCliente = "Boa Escolha! Um refrigerante geladinho nesse calor, refresca bastante!";
+            } else if(escolhaCliente == "Água"){
+                escolhaCliente = "Só a água tira a sede de verdade!";
+            } else if(escolhaCliente == "Suco"){
+                escolhaCliente = "Bela opção! Aqui vai um suco cheio de nutrientes para animar o dia!";
+            } else{
+                escolhaCliente = "Não vai comprar então não pode ficar sentado aí vagabundo!";
+            }
+            MudaImagem(escolhaCliente);
+            return escolhaCliente;
+        }
+
+        function MudaImagem(escolha){
+            var fotoBebida = document.getElementById('imagemBebida');
+            if(escolha == "Boa Escolha! Um refrigerante geladinho nesse calor, refresca bastante!"){
+                fotoBebida.src =  "refri.png";
+                fotoBebida.width = "227";
+                fotoBebida.height = "404";
+            } else if(escolha == "Bela opção! Aqui vai um suco cheio de nutrientes para animar o dia!"){
+                fotoBebida.src = "suco.png";
+                fotoBebida.width = "347";
+                fotoBebida.height = "443";
+            } else if(escolha == "Só a água tira a sede de verdade!"){
+                fotoBebida.src = "agua.png";
+                fotoBebida.width = "213";
+                fotoBebida.height = "379";
+            } else{
+                fotoBebida.src = "agua.png";
+                fotoBebida.width = "0";
+                fotoBebida.height = "0";
+            }
+
+        }
+
+        var item1 = "Refrigerante";
+        var item2 = "Suco";
+        var item3 = "Água";
+        var itemEscolhido = ExibeEscolha();
+
+        var menu = ExibeMenu(item1, item2, item3);
+        
+
+    </script>
+    
+    <button onclick="document.getElementById('opcoes').innerHTML = ExibeMenu(item1, item2, item3)">Veja o menu aqui!</button>
+    <p id="opcoes"></p> 
+
+    <br><br>
+    <form name="possibilidades" onsubmit="ExibeEscolha()" class="formulario">
+        <label for="bebida">O que você deseja beber?</label>
+        <br>
+        <input type="text" name="bebida">
+
+
+    </form>
+    <br>
+    <button onclick="document.getElementById('bebidaEscolhida').innerHTML = ExibeEscolha()">Fazer pedido</button>
+
+
+    
+    <p id="bebidaEscolhida"></p>
+    <img id="imagemBebida">
+
+</body>
