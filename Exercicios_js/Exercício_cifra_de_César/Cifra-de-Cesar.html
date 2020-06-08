@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="Cifra-de-Cesar.css">
+    </head>
+
+    <body>
+
+        <h1>Cifra de César</h1>
+        <br>
+        <br>
+        <h2>Escreva abaixo o texto que você deseja codificar:</h2>
+        <br>
+        <input id="textoCodificacao" type="text">
+        <br><br>
+        <h2>Escreva abaixo a quantidade de saltos utilizada para a codificação:</h2>
+        <br>
+        <input id="salto" type="number">
+
+        
+
+        <script src="Cifra-de-Cesar.js">
+        </script>
+
+        <br><br>
+        <button onclick="document.getElementById('textoCodificado').innerHTML = esconde()">Codificar!</button>
+        <br>
+        <p id="textoCodificado"></p>
+
+
+
+
+        <h2>Escreva abaixo o texto que você deseja decodificar:</h2>
+        <br>
+        <input id="textoDecodificacao" type="text">
+        <br><br>
+        <h2>Escreva abaixo a quantidade de saltos utilizada para a decodificação:</h2>
+        <br>
+        <input id="salto2" type="number">
+
+        <br><br>
+        <button onclick="document.getElementById('textoDecodificado').innerHTML = revela()">Decodificar!</button>
+        <br>
+        <p id="textoDecodificado"></p>
+
+
+
+    </body>
+
+
+
+
+
+
+
+
+
+
+
+</html>
